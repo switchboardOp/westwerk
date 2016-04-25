@@ -22,7 +22,6 @@ function loadMore(n) {
         , type: "post"
         , dataType: "json"
         , success: function (data, textStatus, jqXHR) {
-
             if (numLoaded < Object.keys(data).length){
             draw(data, n);
             }
@@ -33,7 +32,7 @@ function loadMore(n) {
 // calls drawDiv a certain number of times and keeps track of where to start
 function draw(data, n) {
     var x = numLoaded;
-    for (i = x; i < x + n; i++) {
+    for (var i = x; i < x + n; i++) {
         drawDiv(data[i]);
     }
 }

@@ -84,22 +84,22 @@ hr
     
 .panel-heading
   background-color: $green
-  a
-    color: white
-    text-decoration: none
-
-.panel-title
+  color: white
   text-transform: uppercase
 
-.panel-heading .accordion-toggle:after 
+.accordion-toggle, .accordion-toggle:hover, .accordion-toggle:active, .accordion-toggle:focus
+  text-decoration: none
+  
+.accordion-toggle .panel-heading:after 
   // symbol for open panels
   font-family: 'Glyphicons Halflings' 
   content: "\e253"   
   float: right      
 
-.panel-heading .accordion-toggle.collapsed:after 
+.accordion-toggle.collapsed .panel-heading:after 
   // symbol for collapsed panels
-  content: "\e252"   
+  content: "\e252"
+  float: right
 
 .hero-padding
   margin-top: 400px
@@ -203,9 +203,9 @@ hr
   margin: auto
   border: 0
   a
+    color: white
     &:hover
       color: $green
-    color: white
 
 #hero-header
   position: fixed

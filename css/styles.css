@@ -69,21 +69,21 @@ hr {
       padding: 6px 40px; } }
 
 .panel-heading {
-  background-color: #35bfae; }
-  .panel-heading a {
-    color: white;
-    text-decoration: none; }
-
-.panel-title {
+  background-color: #35bfae;
+  color: white;
   text-transform: uppercase; }
 
-.panel-heading .accordion-toggle:after {
+.accordion-toggle, .accordion-toggle:hover, .accordion-toggle:active, .accordion-toggle:focus {
+  text-decoration: none; }
+
+.accordion-toggle .panel-heading:after {
   font-family: "Glyphicons Halflings";
   content: "";
   float: right; }
 
-.panel-heading .accordion-toggle.collapsed:after {
-  content: ""; }
+.accordion-toggle.collapsed .panel-heading:after {
+  content: "";
+  float: right; }
 
 .hero-padding {
   margin-top: 400px; }
