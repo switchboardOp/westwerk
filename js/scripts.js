@@ -29,23 +29,26 @@ function loadMore(n) {
     });
 }
 
-// calls drawDiv a certain number of times and keeps track of where to start
+// calls drawDiv an arbitrary number of times and keeps track of where to start
 function draw(data, n) {
     var x = numLoaded;
-    var y = 0;
-    var z = x+n;
-    for (var i = x; i < z; i++) {
+    var y = x + n; // IE9 didn't like adding these in the for statment
+    var cadence = 0;
+
+    for (var i = x; i < y; i++) {
         try {
-            drawDiv(data[i], y);
-            y++;
+            drawDiv(data[i], cadence);
+            cadence++;
         }
-        catch(err) {
+        // when the error is caught we've run out of objects in the json array
+        // so we hide the load more button
+        catch (err) {
             $("#loadMore").hide();
         }
     }
 }
 
-// parses and appends the json data
+// parses and appends the json data then increments numLoaded
 function drawDiv(x, cadence) {
     var firstName = x.name.first;
     var lastName = x.name.last;
@@ -53,7 +56,7 @@ function drawDiv(x, cadence) {
     var img = x.image;
     setTimeout(function () {
         $("#employees").append('<div class="employee center-block col-md-3 col-sm-4 col-xs-6"><div class="text-center employee-detail"><div><p class="name">' + firstName + ' ' + lastName + '</p><p class="title small">' + position + '</p></div></div><img class="img-responsive" src="img/employee_images/' + img + '" alt="' + firstName + ' ' + lastName + '"></div>');
-    }, 200 * cadence);
+    }, 200 * cadence); // delay the append relative to cadence so the divs pop in sequentially
 
     numLoaded++;
 }
