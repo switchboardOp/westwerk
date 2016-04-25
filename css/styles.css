@@ -18,6 +18,7 @@ hr { display: block; height: 1px; width: 166px; border: 0; border-top: 1px solid
 .container-fluid { padding: 0px; }
 
 .module { padding-top: 40px; padding-bottom: 40px; }
+.module.last { padding-bottom: 0; }
 
 .btn { margin-top: 20px; margin-bottom: 20px; width: 300px; }
 .btn:hover, .btn:active, .btn:focus { color: white; }
