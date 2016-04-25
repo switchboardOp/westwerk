@@ -33,7 +33,8 @@ function loadMore(n) {
 function draw(data, n) {
     var x = numLoaded;
     var y = 0;
-    for (var i = x; i < x + n; i++) {
+    var z = x+n;
+    for (var i = x; i < z; i++) {
         try {
             drawDiv(data[i], y);
             y++;
