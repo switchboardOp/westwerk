@@ -87,6 +87,8 @@ hr { display: block; height: 1px; width: 166px; border: 0; border-top: 1px solid
 #rush { background: url("../img/rush.jpg"); background-size: cover; width: 100%; background-position: 200px; }
 @media screen and (max-width: 768px) { #rush { background-position: -200px; } }
 
+#employees { margin: 0; }
+
 #footer { height: 135px; line-height: 135px; background-color: #191c1f; position: relative; bottom: 0; overflow: hidden; }
 #footer .container { width: 80%; }
 #footer ul { list-style-type: none; }
