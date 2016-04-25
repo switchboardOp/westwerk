@@ -1,7 +1,9 @@
+// appends bar below headings
 $("h2").after("<hr>");
 
 var numLoaded = 0;
 
+// calls loadMore() a number of times based on device width
 $(document).ready(function() {
     var w = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
     if (w <= 500) {
@@ -13,6 +15,7 @@ $(document).ready(function() {
     }
 });
 
+// loads and draws employess from the json file as long as there are unloaded ones left
 function loadMore(n) {
     $.ajax({
         url: "Employees.json"
@@ -27,6 +30,7 @@ function loadMore(n) {
     });
 }
 
+// calls drawDiv a certain number of times and keeps track of where to start
 function draw(data, n) {
     var x = numLoaded;
     for (i = x; i < x + n; i++) {
@@ -34,6 +38,7 @@ function draw(data, n) {
     }
 }
 
+// parses and appends the json data 
 function drawDiv(x) {
     var firstName = x.name.first;
     var lastName = x.name.last;
