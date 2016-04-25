@@ -6,9 +6,9 @@ var numLoaded = 0;
 // calls loadMore() a number of times based on device width
 $(document).ready(function () {
     var w = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
-    if (w <= 500) {
-        loadMore(2);
-    } else if (w > 500 && w < 1024) {
+    if (w < 768) {
+        loadMore(4);
+    } else if (w >= 768 && w < 1024) {
         loadMore(6);
     } else {
         loadMore(8);
