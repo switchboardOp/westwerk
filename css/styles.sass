@@ -17,6 +17,18 @@ $mobile-break: 500px
   -ms-transform: translate($x, $y)
   transform: translate($x, $y)
 
+@mixin flyin($s, $t) 
+  animation: flyin $t ease forwards
+  opacity: 0
+  transform: scale($s)
+  filter: blur(4px)
+  
+@keyframes flyin 
+  to  
+    filter: blur(0)
+    transform: scale(1)
+    opacity: 1
+
 // Tags
 
 body
@@ -107,6 +119,7 @@ hr
 .grey-cover
   height: inherit
   background-color: rgba(25, 38, 31, 0.72)
+  @include flyin(2, 2s)
   h1
     color: white
     font-weight: bold
@@ -131,7 +144,7 @@ hr
   padding: 50px
   color: white
   width: 50%
-  min-width: 300px
+  //min-width: 300px
   .img-responsive
     padding-bottom: 20px
   @media screen and (max-width: $mobile-break)
@@ -170,6 +183,7 @@ hr
   padding-left: 0
   &:hover .employee-detail
     display: block
+  @include flyin (.5, 1s)
   
 .employee-detail
   @extend .absolute-center

@@ -33,8 +33,9 @@ function loadMore(n) {
 function draw(data, n) {
     var x = numLoaded;
     for (var i = x; i < x + n; i++) {
-        drawDiv(data[i]);
-    }
+        setTimeout(drawDiv(data[i]),2000);
+            
+    }      
 }
 
 // parses and appends the json data 

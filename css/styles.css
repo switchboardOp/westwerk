@@ -1,5 +1,10 @@
 @charset "UTF-8";
 @import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
+@keyframes flyin {
+  to {
+    filter: blur(0);
+    transform: scale(1);
+    opacity: 1; } }
 body {
   padding-top: 72px;
   font: "Montserrat", "Arial", sans-serif;
@@ -90,7 +95,11 @@ hr {
 
 .grey-cover {
   height: inherit;
-  background-color: rgba(25, 38, 31, 0.72); }
+  background-color: rgba(25, 38, 31, 0.72);
+  animation: flyin 2s ease forwards;
+  opacity: 0;
+  transform: scale(2);
+  filter: blur(4px); }
   .grey-cover h1 {
     color: white;
     font-weight: bold;
@@ -115,8 +124,7 @@ hr {
 .green-panel {
   padding: 50px;
   color: white;
-  width: 50%;
-  min-width: 300px; }
+  width: 50%; }
   .green-panel .img-responsive {
     padding-bottom: 20px; }
   @media screen and (max-width: 500px) {
@@ -153,7 +161,11 @@ hr {
 .employee {
   position: relative;
   padding-right: 0;
-  padding-left: 0; }
+  padding-left: 0;
+  animation: flyin 1s ease forwards;
+  opacity: 0;
+  transform: scale(0.5);
+  filter: blur(4px); }
   .employee:hover .employee-detail {
     display: block; }
 
