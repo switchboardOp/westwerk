@@ -4,7 +4,6 @@
 body { padding-top: 72px; font-family: "Montserrat", "Arial", sans-serif; font-weight: 400; color: #191c1f; bottom: 0; font-size: 16px; }
 
 h2 { text-transform: uppercase; text-align: center; font-weight: bold; font-size: 1.15em; }
-h2 ::after { content: "<hr>"; }
 
 h3 { text-align: center; font-size: 2.3em; margin-bottom: 40px; }
 @media screen and (max-width: 768px) { h3 { font-size: 1.9em; margin: 0 30px 40px 30px; } }
@@ -84,7 +83,7 @@ hr { display: block; height: 1px; width: 166px; border: 0; border-top: 1px solid
 
 #bsu { background: url("../img/bsu.jpg") no-repeat -450px; background-size: cover; width: 100%; }
 
-#rush { background: url("../img/rush.jpg"); background-size: cover; width: 100%; }
+#rush { background: url("../img/rush.jpg"); background-size: cover; width: 100%; background-position: 200px; }
 @media screen and (max-width: 768px) { #rush { background-position: -200px; } }
 
 #footer { height: 135px; line-height: 135px; background-color: #191c1f; position: relative; bottom: 0; overflow: hidden; }
