@@ -4,7 +4,7 @@ $("h2").after("<hr>");
 var numLoaded = 0;
 
 // calls loadMore() a number of times based on device width
-$(document).ready(function() {
+$(document).ready(function () {
     var w = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
     if (w <= 500) {
         loadMore(2);
@@ -22,8 +22,8 @@ function loadMore(n) {
         , type: "post"
         , dataType: "json"
         , success: function (data, textStatus, jqXHR) {
-            if (numLoaded < Object.keys(data).length){
-            draw(data, n);
+            if (numLoaded < Object.keys(data).length) {
+                draw(data, n);
             }
         }
     });
@@ -32,20 +32,22 @@ function loadMore(n) {
 // calls drawDiv a certain number of times and keeps track of where to start
 function draw(data, n) {
     var x = numLoaded;
+    var y = 0;
     for (var i = x; i < x + n; i++) {
-        setTimeout(drawDiv(data[i]),2000);
-            
-    }      
+        drawDiv(data[i], y);
+        y++;
+    }
 }
 
-// parses and appends the json data 
-function drawDiv(x) {
+// parses and appends the json data
+function drawDiv(x, cadence) {
     var firstName = x.name.first;
     var lastName = x.name.last;
     var position = x.position;
     var img = x.image;
+    setTimeout(function () {
+        $("#employeesDiv").append('<div class="employee center-block col-md-3 col-sm-4 col-xs-12"><div class="text-center employee-detail"><div><p class="name">' + firstName + ' ' + lastName + '</p><p class="title">' + position + '</p></div></div><img class="img-responsive" src="img/employee_images/' + img + '" alt="' + firstName + ' ' + lastName + '"></div>');
+    }, 200 * cadence);
 
-    $("#employeesDiv").append('<div class="employee center-block col-md-3 col-sm-4 col-xs-12"><div class="text-center employee-detail"><div><p class="name">' + firstName + ' ' + lastName + '</p><p class="title">' + position + '</p></div></div><img class="img-responsive" src="img/employee_images/' + img + '" alt="' + firstName + ' ' + lastName + '"></div>');
-    
     numLoaded++;
 }

@@ -1,242 +1,95 @@
 @charset "UTF-8";
-@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
-@keyframes flyin {
-  to {
-    filter: blur(0);
-    transform: scale(1);
-    opacity: 1; } }
-body {
-  padding-top: 72px;
-  font: "Montserrat", "Arial", sans-serif;
-  color: #191c1f;
-  bottom: 0; }
+@import url(https://fonts.googleapis.com/css?family=Montserrat:400);
+@keyframes flyin { to { filter: blur(0); transform: scale(1); opacity: 1; } }
+body { padding-top: 72px; font-family: "Montserrat", "Arial", sans-serif; font-weight: 400; color: #191c1f; bottom: 0; font-size: 16px; }
 
-h2 {
-  text-transform: uppercase;
-  text-align: center;
-  font-weight: bold;
-  font-size: 18px; }
-  h2 ::after {
-    content: "<hr>"; }
+h2 { text-transform: uppercase; text-align: center; font-weight: bold; font-size: 1.15em; }
+h2 ::after { content: "<hr>"; }
 
-h3 {
-  text-align: center;
-  font-size: 2.5em;
-  margin-bottom: 40px; }
-  @media screen and (max-width: 768px) {
-    h3 {
-      font-size: 2em;
-      margin: 0 30px 40px 30px; } }
-  @media screen and (max-width: 500px) {
-    h3 {
-      font-size: 1.5em; } }
+h3 { text-align: center; font-size: 2.3em; margin-bottom: 40px; }
+@media screen and (max-width: 768px) { h3 { font-size: 1.9em; margin: 0 30px 40px 30px; } }
+@media screen and (max-width: 500px) { h3 { font-size: 1.5em; } }
 
-hr {
-  display: block;
-  height: 1px;
-  width: 166px;
-  border: 0;
-  border-top: 1px solid #191c1f;
-  margin: 0 auto 40px auto;
-  padding: 0; }
+hr { display: block; height: 1px; width: 166px; border: 0; border-top: 1px solid #191c1f; margin: 0 auto 40px auto; padding: 0; }
 
-.absolute-center, .employee-detail, .employee-detail > div {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%); }
+.absolute-center, .employee-detail, .employee-detail > div { position: absolute; top: 50%; left: 50%; -webkit-transform: translate(-50%, -50%); -ms-transform: translate(-50%, -50%); transform: translate(-50%, -50%); }
 
-.vertical-center {
-  position: absolute;
-  top: 50%;
-  -webkit-transform: translate(0, -50%);
-  -ms-transform: translate(0, -50%);
-  transform: translate(0, -50%); }
+.vertical-center { position: absolute; top: 50%; -webkit-transform: translate(0, -50%); -ms-transform: translate(0, -50%); transform: translate(0, -50%); }
 
-.container-fluid {
-  padding: 0px; }
+.container-fluid { padding: 0px; }
 
-.module {
-  padding-top: 40px;
-  padding-bottom: 40px; }
+.module { padding-top: 40px; padding-bottom: 40px; }
 
-.btn {
-  margin-top: 20px;
-  margin-bottom: 20px;
-  width: 300px; }
-  .btn:hover, .btn:active, .btn:focus {
-    color: white; }
-  @media screen and (max-width: 768px) {
-    .btn {
-      width: auto;
-      padding: 6px 40px; } }
+.btn { margin-top: 20px; margin-bottom: 20px; width: 300px; }
+.btn:hover, .btn:active, .btn:focus { color: white; }
+@media screen and (max-width: 768px) { .btn { width: auto; padding: 6px 40px; } }
 
-.panel-heading {
-  background-color: #35bfae;
-  color: white;
-  text-transform: uppercase; }
+.panel-heading { background-color: #35bfae; color: white; text-transform: uppercase; }
 
-.accordion-toggle, .accordion-toggle:hover, .accordion-toggle:active, .accordion-toggle:focus {
-  text-decoration: none; }
+.accordion-toggle, .accordion-toggle:hover, .accordion-toggle:active, .accordion-toggle:focus { text-decoration: none; }
 
-.accordion-toggle .panel-heading:after {
-  font-family: "Glyphicons Halflings";
-  content: "";
-  float: right; }
+.accordion-toggle .panel-heading:after { font-family: "Glyphicons Halflings"; content: ""; float: right; }
 
-.accordion-toggle.collapsed .panel-heading:after {
-  content: "";
-  float: right; }
+.accordion-toggle.collapsed .panel-heading:after { content: ""; float: right; }
 
-.hero-padding {
-  margin-top: 400px; }
+.hero-padding { margin-top: 400px; }
 
-.grey-cover {
-  height: inherit;
-  background-color: rgba(25, 38, 31, 0.72);
-  animation: flyin 2s ease forwards;
-  opacity: 0;
-  transform: scale(2);
-  filter: blur(4px); }
-  .grey-cover h1 {
-    color: white;
-    font-weight: bold;
-    font-size: 3em; }
-    @media screen and (max-width: 768px) {
-      .grey-cover h1 {
-        font-size: 2em; } }
-    @media screen and (max-width: 500px) {
-      .grey-cover h1 {
-        font-size: 1.5em; } }
+.grey-cover { height: inherit; background-color: rgba(25, 38, 31, 0.72); animation: flyin 2s ease forwards; opacity: 0; transform: scale(2); filter: blur(4px); }
+.grey-cover h1 { color: white; font-weight: bold; font-size: 2em; }
+@media screen and (max-width: 768px) { .grey-cover h1 { font-size: 1.6em; } }
+@media screen and (max-width: 500px) { .grey-cover h1 { font-size: 1.2em; } }
 
-.green-bg, .green-panel {
-  background-color: #35bfae; }
+.green-bg, .green-panel { background-color: #35bfae; }
 
-.grey-bg {
-  background-color: #53585a;
-  color: white; }
+.grey-bg { background-color: #53585a; color: white; }
 
-.white-bg {
-  background-color: white; }
+.white-bg { background-color: white; }
 
-.green-panel {
-  padding: 50px;
-  color: white;
-  width: 50%; }
-  .green-panel .img-responsive {
-    padding-bottom: 20px; }
-  @media screen and (max-width: 500px) {
-    .green-panel {
-      background-color: rgba(53, 191, 174, 0.72);
-      width: 100%; } }
+.green-panel { padding: 50px; color: white; width: 50%; }
+.green-panel .img-responsive { padding-bottom: 20px; }
+@media screen and (max-width: 500px) { .green-panel { background-color: rgba(53, 191, 174, 0.72); width: 100%; } }
 
-.panel-group {
-  margin-bottom: 0; }
+.panel-group { margin-bottom: 0; }
 
-.panel-title {
-  display: inline; }
+.panel-title { display: inline; }
 
-.navbar-brand {
-  padding: 26px 0 26px 0; }
+.navbar-brand { padding: 26px 0 26px 0; }
 
-.navbar-nav > li > a {
-  line-height: 42px; }
+.navbar-nav > li > a { line-height: 42px; }
 
-.navbar-toggle {
-  margin: 19px; }
+.navbar-toggle { margin: 19px; }
 
-.navbar-collapse {
-  background-color: #191c1f;
-  border: 0; }
+.navbar-collapse { background-color: #191c1f; border: 0; }
 
-.footer-badge {
-  height: 20px;
-  width: 20px; }
+.footer-badge { height: 20px; width: 20px; }
 
-.eighty {
-  width: 80%; }
+.eighty { width: 80%; }
 
-.employee {
-  position: relative;
-  padding-right: 0;
-  padding-left: 0;
-  animation: flyin 1s ease forwards;
-  opacity: 0;
-  transform: scale(0.5);
-  filter: blur(4px); }
-  .employee:hover .employee-detail {
-    display: block; }
+.employee { position: relative; padding-right: 0; padding-left: 0; animation: flyin 1s ease forwards; opacity: 0; transform: scale(0.5); filter: blur(4px); }
+.employee:hover .employee-detail { display: block; }
 
-.employee-detail {
-  color: white;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(53, 191, 174, 0.72);
-  cursor: pointer;
-  display: none; }
-  .employee-detail .name {
-    font-size: 2em; }
-  .employee-detail .title {
-    text-transform: uppercase; }
+.employee-detail { color: white; width: 100%; height: 100%; background-color: rgba(53, 191, 174, 0.72); cursor: pointer; display: none; }
+.employee-detail .name { font-size: 2em; }
+.employee-detail .title { text-transform: uppercase; }
 
-* {
-  -webkit-border-radius: 0 !important;
-  -moz-border-radius: 0 !important;
-  border-radius: 0 !important; }
+* { -webkit-border-radius: 0 !important; -moz-border-radius: 0 !important; border-radius: 0 !important; }
 
-.white-text {
-  color: white; }
+.white-text { color: white; }
 
-#navbar {
-  background-color: #191c1f;
-  height: 72px;
-  margin: auto;
-  border: 0; }
-  #navbar a {
-    color: white; }
-    #navbar a:hover {
-      color: #35bfae; }
+#navbar { background-color: #191c1f; height: 72px; margin: auto; border: 0; }
+#navbar a { color: white; }
+#navbar a:hover { color: #35bfae; }
 
-#hero-header {
-  position: fixed;
-  height: 500px;
-  background: #ffffff url("../img/westwerk-office.jpg") no-repeat -300px -400px;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: -1; }
+#hero-header { position: fixed; height: 500px; background: #ffffff url("../img/westwerk-office.jpg") no-repeat -300px -400px; top: 0; left: 0; right: 0; z-index: -1; }
 
-#bsu {
-  background: url("../img/bsu.jpg") no-repeat -450px;
-  background-size: cover;
-  width: 100%; }
+#bsu { background: url("../img/bsu.jpg") no-repeat -450px; background-size: cover; width: 100%; }
 
-#rush {
-  background: url("../img/rush.jpg");
-  background-size: cover;
-  width: 100%; }
-  @media screen and (max-width: 768px) {
-    #rush {
-      background-position: -200px; } }
+#rush { background: url("../img/rush.jpg"); background-size: cover; width: 100%; }
+@media screen and (max-width: 768px) { #rush { background-position: -200px; } }
 
-#footer {
-  height: 135px;
-  line-height: 135px;
-  background-color: #191c1f;
-  position: relative;
-  bottom: 0;
-  overflow: hidden; }
-  #footer .container {
-    width: 80%; }
-  #footer ul {
-    list-style-type: none; }
-    #footer ul li {
-      display: inline;
-      padding: 0 10px; }
+#footer { height: 135px; line-height: 135px; background-color: #191c1f; position: relative; bottom: 0; overflow: hidden; }
+#footer .container { width: 80%; }
+#footer ul { list-style-type: none; }
+#footer ul li { display: inline; padding: 0 10px; }
 
-#accordion {
-  width: 80%; }
-
-/*# sourceMappingURL=styles.css.map */
+#accordion { width: 80%; }
