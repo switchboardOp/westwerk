@@ -34,8 +34,13 @@ function draw(data, n) {
     var x = numLoaded;
     var y = 0;
     for (var i = x; i < x + n; i++) {
-        drawDiv(data[i], y);
-        y++;
+        try {
+            drawDiv(data[i], y);
+            y++;
+        }
+        catch(err) {
+            $("#loadMore").hide();
+        }
     }
 }
 
