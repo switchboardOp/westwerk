@@ -40,7 +40,7 @@ function drawDiv(x) {
     var position = x.position;
     var img = x.image;
 
-    $("#employeesDiv").append('<div class="employee col-md-3 col-sm-4 col-xs-12"><div class="text-center employee-detail"><div><p class="name">' + firstName + ' ' + lastName + '</p><p class="title">' + position + '</p></div></div><img class="img-responsive" src="img/employee_images/' + img + '" alt="' + firstName + ' ' + lastName + '"></div>');
+    $("#employeesDiv").append('<div class="employee center-block col-md-3 col-sm-4 col-xs-12"><div class="text-center employee-detail"><div><p class="name">' + firstName + ' ' + lastName + '</p><p class="title">' + position + '</p></div></div><img class="img-responsive" src="img/employee_images/' + img + '" alt="' + firstName + ' ' + lastName + '"></div>');
     
     numLoaded++;
 }
