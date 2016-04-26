@@ -53,25 +53,23 @@ function drawDiv(x, cadence) {
     var position = x.position;
     var imgPath = "img/employee_images/" + x.image;
 
+    var $employee = $("<div>").addClass("employee center-block col-md-3 col-sm-4 col-xs-6");
+    var $detail = $("<div>").addClass("text-center employee-detail");
+    var $wrapper = $("<div>");
+    var $name = $("<p>").addClass("name").text(name);
+    var $title = $("<p>").addClass("title").text(position);
+    var $image = $("<img>").addClass("img-responsive")
+        .attr({
+            src: imgPath, 
+            alt: name
+        });
+
+    $wrapper.append($name).append($title);
+    $detail.append($wrapper);
+    $employee.append($detail).append($image);
+
     setTimeout(function () {
-        $("#employees")
-            .append(
-                $("<div>").addClass("employee center-block col-md-3 col-sm-4 col-xs-6")
-                .append(
-                    $("<div>").addClass("text-center employee-detail")
-                    .append(
-                        $("<div>")
-                        .append(
-                            $("<p>").addClass("name").text(name))
-                        .append(
-                            $("<p>").addClass("title").text(position))))
-                .append(
-                    $("<img>").addClass("img-responsive")
-                    .attr({
-                        src: imgPath, 
-                        alt: name
-                    })
-                ));
+        $("#employees").append($employee);
     }, 200 * cadence); // delay the append so the divs pop in sequentially
 
 }
