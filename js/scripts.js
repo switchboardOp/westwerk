@@ -18,10 +18,10 @@ $(document).ready(function () {
 // loads and draws employess from the json file as long as there are unloaded ones left
 function loadMore(n) {
     $.ajax({
-        url: "Employees.json", 
-        type: "post", 
-        dataType: "json", 
-        success: function (data, textStatus, jqXHR) {
+        url: "Employees.json"
+        , type: "post"
+        , dataType: "json"
+        , success: function (data, textStatus, jqXHR) {
             if (numLoaded < Object.keys(data).length) {
                 draw(data, n);
             }
@@ -32,7 +32,7 @@ function loadMore(n) {
 // calls drawDiv an arbitrary number of times, keeps track of loaded index
 function draw(data, n) {
     var start = numLoaded;
-    var stop = x + n; // IE9 didn't like adding these in the for statment
+    var stop = start + n; // IE9 didn't like adding these in the for statment
     var count = 0;
 
     for (var i = start; i < stop; i++) {
@@ -49,11 +49,29 @@ function draw(data, n) {
 }
 
 function drawDiv(x, cadence) {
-    var firstName = x.name.first;
-    var lastName = x.name.last;
+    var name = x.name.first + " " + x.name.last;
     var position = x.position;
-    var img = x.image;
+    var imgPath = "img/employee_images/" + x.image;
+
     setTimeout(function () {
-        $("#employees").append('<div class="employee center-block col-md-3 col-sm-4 col-xs-6"><div class="text-center employee-detail"><div><p class="name">' + firstName + ' ' + lastName + '</p><p class="title small">' + position + '</p></div></div><img class="img-responsive" src="img/employee_images/' + img + '" alt="' + firstName + ' ' + lastName + '"></div>');
+        $("#employees")
+            .append(
+                $("<div>").addClass("employee center-block col-md-3 col-sm-4 col-xs-6")
+                .append(
+                    $("<div>").addClass("text-center employee-detail")
+                    .append(
+                        $("<div>")
+                        .append(
+                            $("<p>").addClass("name").text(name))
+                        .append(
+                            $("<p>").addClass("title").text(position))))
+                .append(
+                    $("<img>").addClass("img-responsive")
+                    .attr({
+                        src: imgPath, 
+                        alt: name
+                    })
+                ));
     }, 200 * cadence); // delay the append so the divs pop in sequentially
+
 }
