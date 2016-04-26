@@ -1,3 +1,10 @@
 .grey-cover, .employee {
   transform: scale(1) !important;
   opacity: 1 !important; }
+
+.employee:hover .employee-detail {
+  display: block !important; }
+
+.employee-detail {
+  opacity: 1 !important;
+  display: none !important; }

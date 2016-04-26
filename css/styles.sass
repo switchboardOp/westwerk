@@ -184,7 +184,7 @@ hr
   padding-right: 0
   padding-left: 0
   &:hover .employee-detail
-    display: block
+    opacity: 1
   @include flyin (.5, 1s)
   
 .employee-detail
@@ -194,7 +194,8 @@ hr
   height: 100%
   background-color: $transparent-green
   cursor: pointer
-  display: none
+  opacity: 0
+  transition: all .3s ease-in-out
   & > div
     @extend .absolute-center
   .name
