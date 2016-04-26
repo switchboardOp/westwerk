@@ -18,10 +18,10 @@ $(document).ready(function () {
 // loads and draws employess from the json file as long as there are unloaded ones left
 function loadMore(n) {
     $.ajax({
-        url: "Employees.json"
-        , type: "post"
-        , dataType: "json"
-        , success: function (data, textStatus, jqXHR) {
+        url: "Employees.json", 
+        type: "post", 
+        dataType: "json", 
+        success: function (data, textStatus, jqXHR) {
             if (numLoaded < Object.keys(data).length) {
                 draw(data, n);
             }
@@ -31,15 +31,15 @@ function loadMore(n) {
 
 // calls drawDiv an arbitrary number of times, keeps track of loaded index
 function draw(data, n) {
-    var x = numLoaded;
-    var y = x + n; // IE9 didn't like adding these in the for statment
-    var c = 0;
+    var start = numLoaded;
+    var stop = x + n; // IE9 didn't like adding these in the for statment
+    var count = 0;
 
-    for (var i = x; i < y; i++) {
+    for (var i = start; i < stop; i++) {
         try {
-            drawDiv(data[i], c);
+            drawDiv(data[i], count);
             numLoaded++;
-            c++;
+            count++;
         }
         // when the error is caught we've run out of objects in the json array
         catch (err) {

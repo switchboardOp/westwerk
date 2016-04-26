@@ -2,10 +2,12 @@
 
 // Variables
 
-$green: #35bfae
 $black: #191c1f
+$white: #ffffff
+$green: #35bfae
 $medium-grey: #53585a
 $transparent-green: rgba(53, 191, 174, .72)
+$transparent-grey: rgba(25, 38, 31, 0.72)
 
 $tablet-break: 768px
 $mobile-break: 500px
@@ -35,7 +37,7 @@ body
   padding-top: 72px
   font-family: 'Montserrat', 'Arial', sans-serif
   font-weight: 400
-  color: $black
+  color: $white
   bottom: 0
   font-size: 16px
 
@@ -91,14 +93,14 @@ hr
   margin-bottom: 20px
   width: 300px
   &:hover, &:active, &:focus
-    color: white
+    color: $white
   @media screen and (max-width: $tablet-break)
     width: auto
     padding: 6px 40px
     
 .panel-heading
   background-color: $green
-  color: white
+  color: $white
   text-transform: uppercase
 
 .accordion-toggle, .accordion-toggle:hover, .accordion-toggle:active, .accordion-toggle:focus
@@ -120,10 +122,9 @@ hr
 
 .grey-cover
   height: inherit
-  background-color: rgba(25, 38, 31, 0.72)
+  background-color: $transparent-grey
   @include flyin(2, 2s)
   h1
-    color: white
     font-weight: bold
     font-size: 2.2em
     @media screen and (max-width: $tablet-break)
@@ -132,19 +133,20 @@ hr
       font-size: 1.3em
     
 .green-bg
-  background-color: $green     
+  background-color: $green
+  color: $white
 
 .grey-bg
   background-color: $medium-grey
-  color: white
+  color: $white
 
 .white-bg
-  background-color: white
+  background-color: $white
+  color: $black
 
 .green-panel
   @extend .green-bg
   padding: 50px
-  color: white
   width: 50%
   //min-width: 300px
   .img-responsive
@@ -189,7 +191,7 @@ hr
   
 .employee-detail
   @extend .absolute-center
-  color: white
+  color: $white
   width: 100%
   height: 100%
   background-color: $transparent-green
@@ -209,9 +211,6 @@ hr
   -moz-border-radius: 0 !important
   border-radius: 0 !important
 
-.white-text
-  color: white
-
 // IDs
 
 #navbar
@@ -220,7 +219,7 @@ hr
   margin: auto
   border: 0
   a
-    color: white
+    color: $white
     &:hover
       color: $green
 
